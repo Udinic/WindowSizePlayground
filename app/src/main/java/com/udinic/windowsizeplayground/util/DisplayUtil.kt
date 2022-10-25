@@ -7,7 +7,7 @@ import androidx.window.layout.WindowMetricsCalculator
 
 object DisplayUtil {
     var logtag = "DisplayUtil"
-    var lastWidthSizeClass: WindowWidthSizeClass = WindowWidthSizeClass.COMPACT
+    var lastWidthSizeClass: WindowWidthSizeClass? = null
 
     /**
      * Update the cached dimens.
@@ -16,14 +16,16 @@ object DisplayUtil {
     fun updateScreenDimens(activity: Activity): Boolean {
         val windowMetrics =
             WindowMetricsCalculator.getOrCreate().computeCurrentWindowMetrics(activity)
+        val currWidthSizeClass = WindowWidthSizeClass.getWidthSizeClass(pxToDp(windowMetrics.bounds.width(), activity.resources))
         Log.d(
             logtag,
-            "Curr Dimens dp[${pxToDp(windowMetrics.bounds.width(), activity.resources)}, ${pxToDp(windowMetrics.bounds.height(), activity.resources)}] px[${windowMetrics.bounds.width()}, ${windowMetrics.bounds.height()}]. bounds = ${windowMetrics.bounds}"
+            "SizeClass[${currWidthSizeClass}] Dimens dp[${pxToDp(windowMetrics.bounds.width(), activity.resources)}, ${pxToDp(windowMetrics.bounds.height(), activity.resources)}] px[${windowMetrics.bounds.width()}, ${windowMetrics.bounds.height()}]. bounds = ${windowMetrics.bounds}"
         )
-        val currWidthSizeClass = WindowWidthSizeClass.getWidthSizeClass(pxToDp(windowMetrics.bounds.width(), activity.resources))
 
-        if (currWidthSizeClass != lastWidthSizeClass) {
-            Log.d(logtag, "size class updated [${lastWidthSizeClass}] -> [${currWidthSizeClass}]. Restarting...")
+        if (lastWidthSizeClass == null) {
+            lastWidthSizeClass = currWidthSizeClass
+        } else if (currWidthSizeClass != lastWidthSizeClass) {
+            Log.d(logtag, "size class updated [${lastWidthSizeClass}] -> [${currWidthSizeClass}].   ")
             lastWidthSizeClass = currWidthSizeClass
             return true
         }

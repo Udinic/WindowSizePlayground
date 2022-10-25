@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(logtag, "onConfigurationChanged caller[${caller}]")
         val shouldRecreateActivity = DisplayUtil.updateScreenDimens(this)
         if (shouldRecreateActivity) {
+            Log.d(logtag, "Restarting activity...")
             recreate()
         }
     }
