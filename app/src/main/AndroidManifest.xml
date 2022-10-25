@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WindowSizePlayground"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -27,3 +27,5 @@
     </application>
 
 </manifest>
+
+<!--    android:configChanges="screenSize|orientation|screenLayout|smallestScreenSize"-->
