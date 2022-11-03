@@ -4,6 +4,7 @@
     package="com.udinic.windowsizeplayground">
 
     <application
+        android:name=".WindowPlaygroundApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -24,8 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:exported="true"
+            android:configChanges="screenSize|orientation|screenLayout|smallestScreenSize"
+            android:theme="@style/Theme.WindowSizePlayground.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
-
-<!--    android:configChanges="screenSize|orientation|screenLayout|smallestScreenSize"-->

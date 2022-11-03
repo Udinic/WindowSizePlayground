@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFA000"
+    android:background="#0288D1"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,20 +16,21 @@
             android:id="@+id/textview_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MAIN ACTIVITY [w600]"
+            android:text="SECOND ACTIVITY [DEFAULT]"
             android:textSize="34sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="50dp"
             />
+        />
 
         <TextView
             android:id="@+id/text_winmetrics"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="[COMPACT, COMPACT]"
-            android:textSize="30sp"
+            android:textSize="34sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_first"
@@ -48,17 +49,17 @@
             android:layout_marginTop="30dp"
             />
 
-        <Button
-            android:id="@+id/btn_goto_second_act"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="64dp"
-            android:text="GOTO SECOND ACTIVITY"
-            app:layout_constraintTop_toBottomOf="@id/text_act_hash"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+        <!--        <Button-->
+<!--            android:id="@+id/btn_goto_second_act"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:layout_marginTop="64dp"-->
+<!--            android:text="GOTO SECOND ACTIVITY"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/text_winmetrics"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
 
-            />
+<!--            />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
